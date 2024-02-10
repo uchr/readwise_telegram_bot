@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  readwise-telegram-bot:
+    build: .
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - READWISE_TOKEN=${READWISE_TOKEN}
+      - ADMIN_USER=${ADMIN_USER}
+    networks:
+      - readwise_telegram_bot_network
+
+networks:
+  readwise_telegram_bot_network:
+    driver: bridge
